@@ -3,10 +3,10 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-from flask import Flask, jsonify, abort, make_response, request, url_for, Response, Request
+from flask import Flask, jsonify, abort, make_response, request
+from flask_httpauth import HTTPBasicAuth
 from numpy import unicode
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_httpauth import HTTPBasicAuth
 
 auth = HTTPBasicAuth()
 
@@ -130,6 +130,6 @@ def unauthorized():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='localhost', port='8090', debug=True,)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
